@@ -1,0 +1,11 @@
+body{margin:0;background:#111;color:#f3e7c8;font-family:Arial}
+header,footer{text-align:center;background:#1b1b1b;padding:14px}
+header{border-bottom:2px solid #9d7b2f}.wrap{display:flex;height:calc(100vh - 108px)}
+.side{width:250px;background:#191919;padding:12px;box-sizing:border-box}
+.side input,.side button{width:100%;margin:6px 0;padding:10px;border:none;border-radius:8px}
+.side input{background:#2b2b2b;color:#fff}
+.side button{background:#303030;color:#f3e7c8}
+.main{flex:1;position:relative}
+#map{height:100%}
+.info{position:absolute;right:15px;bottom:15px;background:rgba(20,20,20,.9);padding:12px;border:1px solid #9d7b2f;border-radius:10px;z-index:500}
+@media(max-width:800px){.wrap{flex-direction:column}.side{width:100%;height:auto}#map{height:70vh}}
