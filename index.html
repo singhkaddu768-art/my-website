@@ -1,35 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!DOCTYPE html><html><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Empire Atlas</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<title>Empire Atlas V4</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header><h1>EMPIRE ATLAS</h1><p>Interactive Historical Map</p></header>
-<div class="wrap">
-<div class="side">
-<input id="search" placeholder="Search...">
-<button onclick="showEmpire('Maurya Empire',22,79,'Ashoka')">🏛 Maurya Empire</button>
-<button onclick="showEmpire('Roman Empire',41,12,'Trajan')">🦅 Roman Empire</button>
-<button onclick="showEmpire('Mongol Empire',47,102,'Genghis Khan')">🏹 Mongol Empire</button>
-<button onclick="showEmpire('Achaemenid Empire',30,53,'Cyrus the Great')">🦁 Achaemenid Empire</button>
-<button onclick="showEmpire('Gupta Empire',25,82,'Samudragupta')">☀ Gupta Empire</button>
-<button onclick="showEmpire('Ottoman Empire',39,35,'Suleiman')">🌙 Ottoman Empire</button>
-<button onclick="showEmpire('Gokturk Khaganate',47,68,'Bumin Qaghan')">🐺 Gokturk Khaganate</button>
+</head><body>
+<header><h1>Empire Atlas</h1><p>Timeline Edition</p></header>
+<div id="sidebar">
+<h3>Empires</h3>
+<button onclick="showEmpire('maurya')">🏛 Maurya</button>
+<button onclick="showEmpire('gupta')">☀ Gupta</button>
+<button onclick="showEmpire('roman')">🦅 Roman</button>
+<button onclick="showEmpire('mongol')">🏹 Mongol</button>
+<button onclick="showEmpire('ottoman')">🌙 Ottoman</button>
+<button onclick="showEmpire('gokturk')">🐺 Gokturk</button>
+<button onclick="showEmpire('mughal')">🕌 Mughal</button>
+<button onclick="showEmpire('byzantine')">✝ Byzantine</button>
+<button onclick="showEmpire('chola')">🌊 Chola</button>
 </div>
-<div class="main">
 <div id="map"></div>
-<div class="info">
-<h2 id="title">Welcome</h2>
-<p id="details">Click an empire to move the map.</p>
-</div>
-</div>
+<div id="panel">
+<b id="name">Welcome</b><br>
+<span id="info">Select an empire.</span><br><br>
+<label>Timeline</label>
+<input type="range" min="0" max="8" value="0" id="time" oninput="timeline()">
+<div id="era">Maurya Empire (~250 BCE)</div>
 </div>
 <footer>Empire Atlas • Created by Yashwardhan Singh</footer>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="script.js"></script>
-</body>
-</html>
+</body></html>
