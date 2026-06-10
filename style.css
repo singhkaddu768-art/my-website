@@ -1,1 +1,343 @@
-html,body{height:100%;margin:0}header,footer{text-align:center;background:#1b1b1b;color:#f0dfab;padding:10px}#sidebar{position:fixed;left:0;top:70px;bottom:40px;width:240px;background:#1d1d1d;color:white}#map{position:fixed;left:240px;right:0;top:70px;bottom:40px}
+/* ====================================
+   EMPIRE ATLAS V8.5
+   Historical Dark-Gold Theme
+   Created by Yashwardhan Singh
+==================================== */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Trebuchet MS", sans-serif;
+    background: #111;
+    color: #f4e3b2;
+    overflow: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    height: 80px;
+    background: linear-gradient(
+        to right,
+        #161616,
+        #222,
+        #161616
+    );
+    border-bottom: 2px solid #d4af37;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 25px;
+}
+
+header h1 {
+    color: #d4af37;
+    font-size: 2rem;
+}
+
+header p {
+    color: #d9c88a;
+    font-size: 0.9rem;
+}
+
+.credit {
+    color: #f4e3b2;
+    font-size: 0.95rem;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+#sidebar {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    bottom: 60px;
+
+    width: 280px;
+
+    background: #181818;
+
+    border-right: 2px solid #d4af37;
+
+    overflow-y: auto;
+    padding: 20px;
+}
+
+#sidebar h2,
+#sidebar h3 {
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+#sidebar hr {
+    margin: 18px 0;
+    border: none;
+    border-top: 1px solid #444;
+}
+
+/* Search Box */
+
+#searchBox {
+    width: 100%;
+    padding: 12px;
+
+    background: #222;
+    color: white;
+
+    border: 1px solid #555;
+    border-radius: 8px;
+
+    margin-bottom: 10px;
+}
+
+#searchBox:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+/* Era Filter */
+
+#eraFilter {
+    width: 100%;
+    padding: 10px;
+
+    background: #222;
+    color: white;
+
+    border: 1px solid #555;
+    border-radius: 8px;
+
+    margin-bottom: 15px;
+}
+
+/* Empire Buttons */
+
+#empireList button,
+#toggleCapitals,
+#toggleBattles,
+#toggleBorders,
+#resetView,
+#playTimeline,
+#pauseTimeline {
+    width: 100%;
+
+    padding: 10px;
+    margin-bottom: 8px;
+
+    background: #2a2a2a;
+    color: #f4e3b2;
+
+    border: 1px solid #555;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+#empireList button:hover,
+#toggleCapitals:hover,
+#toggleBattles:hover,
+#toggleBorders:hover,
+#resetView:hover,
+#playTimeline:hover,
+#pauseTimeline:hover {
+    background: #d4af37;
+    color: #111;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+#timelineContainer {
+    margin-top: 10px;
+}
+
+#timelineSlider {
+    width: 100%;
+    margin-top: 12px;
+}
+
+#timelineYear {
+    text-align: center;
+    margin-top: 10px;
+
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* =========================
+   MAP
+========================= */
+
+#map {
+    position: fixed;
+
+    left: 280px;
+    top: 80px;
+
+    right: 0;
+    bottom: 60px;
+
+    z-index: 1;
+}
+
+/* =========================
+   INFO PANEL
+========================= */
+
+#infoPanel {
+    position: fixed;
+
+    top: 100px;
+    right: 20px;
+
+    width: 320px;
+
+    background: rgba(20, 20, 20, 0.95);
+
+    border: 2px solid #d4af37;
+    border-radius: 12px;
+
+    padding: 18px;
+
+    z-index: 1000;
+
+    box-shadow: 0 0 15px rgba(212,175,55,0.3);
+}
+
+#empireName {
+    color: #d4af37;
+    margin-bottom: 12px;
+}
+
+#empireDetails ul {
+    margin-top: 10px;
+    padding-left: 18px;
+}
+
+#empireDetails li {
+    margin-bottom: 8px;
+}
+
+/* =========================
+   LOADING SCREEN
+========================= */
+
+#loadingScreen {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #111;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 5000;
+
+    color: #d4af37;
+    font-size: 1.8rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 60px;
+
+    background: #161616;
+
+    border-top: 2px solid #d4af37;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 0.85rem;
+
+    color: #d9c88a;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1b1b1b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 8px;
+}
+
+/* =========================
+   MOBILE SUPPORT
+========================= */
+
+@media (max-width: 900px) {
+
+    #sidebar {
+        width: 220px;
+    }
+
+    #map {
+        left: 220px;
+    }
+
+    #infoPanel {
+        width: 260px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    #sidebar {
+        width: 100%;
+        height: 240px;
+        position: relative;
+        top: 0;
+        bottom: auto;
+    }
+
+    #map {
+        left: 0;
+        top: 320px;
+        bottom: 60px;
+    }
+
+    #infoPanel {
+        display: none;
+    }
+} 
